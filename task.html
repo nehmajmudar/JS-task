@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task of JS DOM elements</title>
+    </head>
+    <body>
+    
+        <h1 id="idHead">Elements</h1>
+        <h2 class="clhead">Select by class</h2>
+        <h3 class="grhead">Same as above</h3>
+        <h6 class="grhead">By tagnames</h6><br>
+        <p>Howdy!!!</p>
+        
+        <script>
+                    document.querySelector(".clhead").style.backgroundColor = "green";
+            
+            document.getElementById("idHead").style.backgroundColor = "yellow";
+            
+            var x=document.getElementsByClassName("grhead");
+            x[1].style.backgroundColor = "violet";
+            
+            var y=document.getElementsByTagName("p");
+            y[0].style. backgroundColor = "blue";
+        </script>
+        
+    </body>
+</html>
