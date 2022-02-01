@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <title>Registration</title>
+        
+        <style>
+            body{
+                background-color: lightgreen;
+            }
+            .container{
+                background-color:rgb(185, 182, 182);
+                margin-top: 100px;
+            }
+            header{
+              background-color: rgb(185, 182, 182);
+            }
+        </style>
+    </head>
+<body>
+  <header class="text-center">
+    <h1 class="pb-2 fw-bold">Company credentials entry</h1>
+  </header>
+  <div class="container mx-auto">
+      <form>
+        <div class="form-row">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email" >
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" >
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword">Re-enter Password</label>
+            <input type="password" class="form-control" id="inputPasswordre" placeholder="Re-enter Password" >
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Enter your address" >
+        </div>
+        <div class="form-row">
+          <label for="inputAddress">Country</label>
+          <select class="form-control" id="country" placeholder="Country">
+            <option selected>India</option>
+            <option>Pakistan</option>
+            <option>Bangladesh</option>
+            <option>Bhutan</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6">
+            <div class="input-group col-7 p-0 pt-3 pb-3">
+              <div class="input-group-prepend" style="height: 38px;">
+                <div class="input-group-text">
+                  <input  type="radio" name="genderRadio" id="male" value="male" aria-label="Radio button for Gender" checked>
+                  <label class="input-group-text border-0" for="gender">Male</label>
+                </div>
+                <div class="input-group-text">
+                  <input  type="radio" name="genderRadio" id="female" value="female" aria-label="Radio button for Gender">
+                  <label class="input-group-text border-0" for="gender">Female</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="input-group pt-3 pb-3 pl-0">
+              <div class="input-group-prepend" style="height: 38px;">
+                <div class="input-group-text">
+                  <input  type="checkbox" name="hobbyCheck" id="hobby" value="Wacthing movies" aria-label="Check box for hobby">
+                  <label class="input-group-text border-0" for="hobby">Movies</label>
+                </div>
+                <div class="input-group-text">
+                  <input  type="checkbox" name="hobbyCheck" id="hobby" value="videog" aria-label="Check box for hobby">
+                  <label class="input-group-text border-0" for="hobby">Playing video games</label>
+                </div>
+                <div class="input-group-text">
+                  <input  type="checkbox" name="hobbyCheck" id="hobby" value="Reading" aria-label="Check box for hobby">
+                  <label class="input-group-text border-0" for="hobby">Reading</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mb-3" onclick="myFunc()">Register</button>
+      </form>
+  </div>
+  <table class="container tab" id="table">
+    <thead>
+        <tr class="tr">
+            <th class="th">Email</th>
+            <th class="th">Gender</th>
+            <th class="th">Hobbies</th>
+        </tr>
+    </thead>
+ </table>
+    <script>
+        var entry1=[];
+        var entry2=[];
+        var Checkbox=document.getElementsByName("hobbyCheck");
+        var n=1;
+        var x=0;
+        function myFunc(){
+            var newrow=document.getElementById("table");
+            var insertrow=newrow.insertRow(n);
+
+            
+            entry1[x]=document.getElementById("inputEmail").value;
+            if(male.checked){
+                entry2[x]=document.getElementById("male").value;
+            }
+            else{
+                entry2[x]=document.getElementById("female").value;
+            }
+            
+            var s="";
+            for(var n of Checkbox){
+                if(n.checked){
+                    s += n.value+", ";
+                }
+            }
+            
+            var cell1=insertrow.insertCell(0);
+            var cell2=insertrow.insertCell(1);
+            var cell3=insertrow.insertCell(2);
+
+            cell1.innerHTML=entry1[x];
+            cell2.innerHTML=entry2[x];
+            cell3.innerHTML=s;
+
+      }
+    </script>
+</body>
+</html>
